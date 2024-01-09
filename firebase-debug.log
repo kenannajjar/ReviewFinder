@@ -1,0 +1,257 @@
+[debug] [2024-01-09T01:12:27.334Z] ----------------------------------------------------------------------
+[debug] [2024-01-09T01:12:27.336Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\dxinh\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-01-09T01:12:27.337Z] CLI Version:   13.0.2
+[debug] [2024-01-09T01:12:27.337Z] Platform:      win32
+[debug] [2024-01-09T01:12:27.337Z] Node Version:  v18.12.1
+[debug] [2024-01-09T01:12:27.338Z] Time:          Mon Jan 08 2024 17:12:27 GMT-0800 (Pacific Standard Time)
+[debug] [2024-01-09T01:12:27.338Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-09T01:12:27.405Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-09T01:12:27.406Z] > authorizing via signed-in user (dxinhua123@gmail.com)
+[debug] [2024-01-09T01:12:27.406Z] [iam] checking project reviewfinder-ff9d9 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-01-09T01:12:27.408Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/reviewfinder-ff9d9:testIamPermissions [none]
+[debug] [2024-01-09T01:12:27.408Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/reviewfinder-ff9d9:testIamPermissions x-goog-quota-user=projects/reviewfinder-ff9d9
+[debug] [2024-01-09T01:12:27.408Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/reviewfinder-ff9d9:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-01-09T01:12:27.689Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/reviewfinder-ff9d9:testIamPermissions 200
+[debug] [2024-01-09T01:12:27.690Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/reviewfinder-ff9d9:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-01-09T01:12:27.690Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/reviewfinder-ff9d9/serviceAccounts/reviewfinder-ff9d9@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-01-09T01:12:27.691Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/reviewfinder-ff9d9/serviceAccounts/reviewfinder-ff9d9@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-01-09T01:12:28.591Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/reviewfinder-ff9d9/serviceAccounts/reviewfinder-ff9d9@appspot.gserviceaccount.com:testIamPermissions 404
+[debug] [2024-01-09T01:12:28.592Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/reviewfinder-ff9d9/serviceAccounts/reviewfinder-ff9d9@appspot.gserviceaccount.com:testIamPermissions {"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}}
+[debug] [2024-01-09T01:12:28.592Z] [functions] service account IAM check errored, deploy may fail: HTTP Error: 404, Unknown service account {"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}},"response":{"statusCode":404}},"exit":1,"message":"HTTP Error: 404, Unknown service account","status":404}
+[info] 
+[info] === Deploying to 'reviewfinder-ff9d9'...
+[info] 
+[info] i  deploying functions 
+[debug] [2024-01-09T01:12:28.598Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/reviewfinder-ff9d9 [none]
+[debug] [2024-01-09T01:12:28.872Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/reviewfinder-ff9d9 200
+[debug] [2024-01-09T01:12:28.872Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/reviewfinder-ff9d9 {"projectId":"reviewfinder-ff9d9","projectNumber":"1087603431090","displayName":"ReviewFinder","name":"projects/reviewfinder-ff9d9","resources":{"hostingSite":"reviewfinder-ff9d9"},"state":"ACTIVE","etag":"1_28661b33-dba0-473e-9d03-7cf1eab785ad"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-01-09T01:12:28.876Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-01-09T01:12:28.876Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/reviewfinder-ff9d9
+[debug] [2024-01-09T01:12:28.877Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-01-09T01:12:28.877Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/reviewfinder-ff9d9
+[debug] [2024-01-09T01:12:28.878Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/cloudbuild.googleapis.com [none]
+[debug] [2024-01-09T01:12:28.878Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/cloudbuild.googleapis.com x-goog-quota-user=projects/reviewfinder-ff9d9
+[debug] [2024-01-09T01:12:28.879Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/artifactregistry.googleapis.com [none]
+[debug] [2024-01-09T01:12:28.879Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/artifactregistry.googleapis.com x-goog-quota-user=projects/reviewfinder-ff9d9
+[debug] [2024-01-09T01:12:29.270Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/cloudbuild.googleapis.com 200
+[debug] [2024-01-09T01:12:29.270Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-01-09T01:12:29.272Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/runtimeconfig.googleapis.com 200
+[debug] [2024-01-09T01:12:29.272Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-01-09T01:12:29.294Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/artifactregistry.googleapis.com 200
+[debug] [2024-01-09T01:12:29.294Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-01-09T01:12:29.296Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/cloudfunctions.googleapis.com 200
+[debug] [2024-01-09T01:12:29.296Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-01-09T01:12:29.297Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/reviewfinder-ff9d9/adminSdkConfig [none]
+[debug] [2024-01-09T01:12:29.562Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/reviewfinder-ff9d9/adminSdkConfig 200
+[debug] [2024-01-09T01:12:29.562Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/reviewfinder-ff9d9/adminSdkConfig {"projectId":"reviewfinder-ff9d9","storageBucket":"reviewfinder-ff9d9.appspot.com"}
+[debug] [2024-01-09T01:12:29.562Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/reviewfinder-ff9d9/configs [none]
+[debug] [2024-01-09T01:12:29.813Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/reviewfinder-ff9d9/configs 200
+[debug] [2024-01-09T01:12:29.813Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/reviewfinder-ff9d9/configs {}
+[debug] [2024-01-09T01:12:29.814Z] Customer code is not Node
+[debug] [2024-01-09T01:12:29.815Z] Validating python source
+[debug] [2024-01-09T01:12:29.815Z] Building python source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-01-09T01:12:29.816Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-01-09T01:12:29.822Z] Running command with virtualenv: command="C:\Users\dxinh\Documents\CS\ReviewFinder\functions\venv\Scripts\activate.bat", args=["","&&","python.exe","-c","\"import firebase_functions; import os; print(os.path.dirname(firebase_functions.__file__))\""]
+[debug] [2024-01-09T01:12:29.930Z] stdout: C:\Users\dxinh\Documents\CS\ReviewFinder\functions\venv\Lib\site-packages\firebase_functions
+
+[debug] [2024-01-09T01:12:29.936Z] Running admin server with args: ["python.exe","\"C:\\Users\\dxinh\\Documents\\CS\\ReviewFinder\\functions\\venv\\Lib\\site-packages\\firebase_functions\\private\\serving.py\""] and env: {"FIREBASE_CONFIG":"{\"projectId\":\"reviewfinder-ff9d9\",\"storageBucket\":\"reviewfinder-ff9d9.appspot.com\"}","GCLOUD_PROJECT":"reviewfinder-ff9d9","GOOGLE_CLOUD_QUOTA_PROJECT":"reviewfinder-ff9d9","ADMIN_PORT":"8081"} in C:\Users\dxinh\Documents\CS\ReviewFinder\functions
+[debug] [2024-01-09T01:12:29.936Z] Running command with virtualenv: command="C:\Users\dxinh\Documents\CS\ReviewFinder\functions\venv\Scripts\activate.bat", args=["","&&","python.exe","\"C:\\Users\\dxinh\\Documents\\CS\\ReviewFinder\\functions\\venv\\Lib\\site-packages\\firebase_functions\\private\\serving.py\""]
+[info]  * Serving Flask app 'serving'
+ * Debug mode: off
+
+[error] WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:8081
+
+[error] Press CTRL+C to quit
+
+[error] 127.0.0.1 - - [08/Jan/2024 17:12:30] "GET /__/functions.yaml HTTP/1.1" 200 -
+
+[debug] [2024-01-09T01:12:30.766Z] Got response from /__/functions.yaml endpoints:
+  on_request_example:
+    availableMemoryMb: null
+    concurrency: null
+    entryPoint: on_request_example
+    httpsTrigger: {}
+    ingressSettings: null
+    labels: {}
+    maxInstances: null
+    minInstances: null
+    platform: gcfv2
+    secretEnvironmentVariables: []
+    serviceAccountEmail: null
+    timeoutSeconds: null
+params: []
+requiredAPIs: []
+specVersion: v1alpha1
+
+[error] 127.0.0.1 - - [08/Jan/2024 17:12:30] "GET /__/quitquitquit HTTP/1.1" 200 -
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged C:\Users\dxinh\Documents\CS\ReviewFinder\functions (1.23 KB) for uploading 
+[debug] [2024-01-09T01:12:30.821Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/reviewfinder-ff9d9/locations/-/functions [none]
+[debug] [2024-01-09T01:12:31.224Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/reviewfinder-ff9d9/locations/-/functions 200
+[debug] [2024-01-09T01:12:31.224Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/reviewfinder-ff9d9/locations/-/functions {}
+[debug] [2024-01-09T01:12:31.225Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/reviewfinder-ff9d9/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2024-01-09T01:12:31.831Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/reviewfinder-ff9d9/locations/-/functions 200
+[debug] [2024-01-09T01:12:31.831Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/reviewfinder-ff9d9/locations/-/functions {}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2024-01-09T01:12:31.835Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/run.googleapis.com [none]
+[debug] [2024-01-09T01:12:31.835Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/run.googleapis.com x-goog-quota-user=projects/reviewfinder-ff9d9
+[debug] [2024-01-09T01:12:31.837Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/eventarc.googleapis.com [none]
+[debug] [2024-01-09T01:12:31.837Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/eventarc.googleapis.com x-goog-quota-user=projects/reviewfinder-ff9d9
+[debug] [2024-01-09T01:12:31.838Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/pubsub.googleapis.com [none]
+[debug] [2024-01-09T01:12:31.838Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/pubsub.googleapis.com x-goog-quota-user=projects/reviewfinder-ff9d9
+[debug] [2024-01-09T01:12:31.839Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/storage.googleapis.com [none]
+[debug] [2024-01-09T01:12:31.839Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/storage.googleapis.com x-goog-quota-user=projects/reviewfinder-ff9d9
+[debug] [2024-01-09T01:12:32.222Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/eventarc.googleapis.com 200
+[debug] [2024-01-09T01:12:32.222Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/eventarc.googleapis.com [omitted]
+[warn] !  functions: missing required API eventarc.googleapis.com. Enabling now... 
+[debug] [2024-01-09T01:12:32.223Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/eventarc.googleapis.com:enable [none]
+[debug] [2024-01-09T01:12:32.223Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/eventarc.googleapis.com:enable x-goog-quota-user=projects/reviewfinder-ff9d9
+[debug] [2024-01-09T01:12:32.230Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/pubsub.googleapis.com 200
+[debug] [2024-01-09T01:12:32.230Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/pubsub.googleapis.com [omitted]
+[info] +  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2024-01-09T01:12:32.231Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/storage.googleapis.com 200
+[debug] [2024-01-09T01:12:32.231Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/storage.googleapis.com [omitted]
+[info] +  functions: required API storage.googleapis.com is enabled 
+[debug] [2024-01-09T01:12:32.232Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/run.googleapis.com 200
+[debug] [2024-01-09T01:12:32.233Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/run.googleapis.com [omitted]
+[warn] !  functions: missing required API run.googleapis.com. Enabling now... 
+[debug] [2024-01-09T01:12:32.233Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/run.googleapis.com:enable [none]
+[debug] [2024-01-09T01:12:32.233Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/run.googleapis.com:enable x-goog-quota-user=projects/reviewfinder-ff9d9
+[debug] [2024-01-09T01:12:33.052Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/eventarc.googleapis.com:enable 200
+[debug] [2024-01-09T01:12:33.052Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/eventarc.googleapis.com:enable [omitted]
+[debug] [2024-01-09T01:12:33.092Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/run.googleapis.com:enable 200
+[debug] [2024-01-09T01:12:33.092Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/run.googleapis.com:enable [omitted]
+[debug] [2024-01-09T01:12:43.073Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/eventarc.googleapis.com [none]
+[debug] [2024-01-09T01:12:43.073Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/eventarc.googleapis.com x-goog-quota-user=projects/reviewfinder-ff9d9
+[debug] [2024-01-09T01:12:43.095Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/run.googleapis.com [none]
+[debug] [2024-01-09T01:12:43.096Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/run.googleapis.com x-goog-quota-user=projects/reviewfinder-ff9d9
+[debug] [2024-01-09T01:12:43.459Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/eventarc.googleapis.com 200
+[debug] [2024-01-09T01:12:43.459Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/eventarc.googleapis.com [omitted]
+[info] +  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2024-01-09T01:12:43.511Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/run.googleapis.com 200
+[debug] [2024-01-09T01:12:43.511Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/reviewfinder-ff9d9/services/run.googleapis.com [omitted]
+[info] +  functions: required API run.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2024-01-09T01:12:43.513Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/1087603431090/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-01-09T01:12:43.514Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/1087603431090/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-01-09T01:12:44.532Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/1087603431090/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2024-01-09T01:12:44.532Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/1087603431090/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-1087603431090@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"102836434406360055605"}}
+[debug] [2024-01-09T01:12:44.683Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/1087603431090/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2024-01-09T01:12:44.683Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/1087603431090/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-1087603431090@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"114876475347136066943"}}
+[debug] [2024-01-09T01:12:44.685Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/reviewfinder-ff9d9 [none]
+[debug] [2024-01-09T01:12:44.985Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/reviewfinder-ff9d9 200
+[debug] [2024-01-09T01:12:44.985Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/reviewfinder-ff9d9 {"projectId":"reviewfinder-ff9d9","projectNumber":"1087603431090","displayName":"ReviewFinder","name":"projects/reviewfinder-ff9d9","resources":{"hostingSite":"reviewfinder-ff9d9"},"state":"ACTIVE","etag":"1_28661b33-dba0-473e-9d03-7cf1eab785ad"}
+[debug] [2024-01-09T01:12:44.986Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2024-01-09T01:12:44.987Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/reviewfinder-ff9d9:testIamPermissions [none]
+[debug] [2024-01-09T01:12:44.987Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/reviewfinder-ff9d9:testIamPermissions x-goog-quota-user=projects/reviewfinder-ff9d9
+[debug] [2024-01-09T01:12:44.987Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/reviewfinder-ff9d9:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2024-01-09T01:12:45.194Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/reviewfinder-ff9d9:testIamPermissions 200
+[debug] [2024-01-09T01:12:45.194Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/reviewfinder-ff9d9:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2024-01-09T01:12:45.194Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2024-01-09T01:12:45.195Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/reviewfinder-ff9d9/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2024-01-09T01:12:47.660Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/reviewfinder-ff9d9/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2024-01-09T01:12:47.660Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/reviewfinder-ff9d9/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-1087603431090-us-central1/556489ff-c8e5-4448-8404-81e5f6dedc94.zip?GoogleAccessId=service-1087603431090@gcf-admin-robot.iam.gserviceaccount.com&Expires=1704764566&Signature=FsJ6j04kliE9XgbItr%2FT0FNSVOfEhmhyCblN9%2BfVampBT6Gv2HQwkGkk7uEdR3eH0nniSq85QZW5EdrIWMwDc2x5fXnDa2Vv3mYMr8Uenjsr4gQQWr5bkf2xBNmXJz1xC92uSFkcGNqtceE%2FhKV%2F4O4toTupNmWgXs42sWT5dXoaGKkceJbe9TjBKU09UqMo1Ub4z53k9NLbauNR8Yw4Pv9POPrag3RWUlid4eRyfNVq%2Fkk74YSi8khYgNap7wW%2FhBj8hcIl32fywvkIL%2B4%2Fvs88tEsJiSaBXPTQ%2BnrRjPdnnm8i3YOqKdmo9mehLtzpcaJOHQxyAmiGF4YEybQgmQ%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-1087603431090-us-central1","object":"556489ff-c8e5-4448-8404-81e5f6dedc94.zip"}}
+[debug] [2024-01-09T01:12:47.661Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-1087603431090-us-central1/556489ff-c8e5-4448-8404-81e5f6dedc94.zip GoogleAccessId=service-1087603431090%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1704764566&Signature=FsJ6j04kliE9XgbItr%2FT0FNSVOfEhmhyCblN9%2BfVampBT6Gv2HQwkGkk7uEdR3eH0nniSq85QZW5EdrIWMwDc2x5fXnDa2Vv3mYMr8Uenjsr4gQQWr5bkf2xBNmXJz1xC92uSFkcGNqtceE%2FhKV%2F4O4toTupNmWgXs42sWT5dXoaGKkceJbe9TjBKU09UqMo1Ub4z53k9NLbauNR8Yw4Pv9POPrag3RWUlid4eRyfNVq%2Fkk74YSi8khYgNap7wW%2FhBj8hcIl32fywvkIL%2B4%2Fvs88tEsJiSaBXPTQ%2BnrRjPdnnm8i3YOqKdmo9mehLtzpcaJOHQxyAmiGF4YEybQgmQ%3D%3D
+[debug] [2024-01-09T01:12:47.661Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-1087603431090-us-central1/556489ff-c8e5-4448-8404-81e5f6dedc94.zip [stream]
+[debug] [2024-01-09T01:12:47.942Z] <<< [apiv2][status] PUT https://storage.googleapis.com/gcf-v2-uploads-1087603431090-us-central1/556489ff-c8e5-4448-8404-81e5f6dedc94.zip 200
+[debug] [2024-01-09T01:12:47.942Z] <<< [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-1087603431090-us-central1/556489ff-c8e5-4448-8404-81e5f6dedc94.zip [omitted]
+[info] +  functions: functions folder uploaded successfully 
+[info] i  functions: creating Python 3.11 (2nd Gen) function on_request_example(us-central1)... 
+[debug] [2024-01-09T01:12:47.950Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/reviewfinder-ff9d9/locations/us-central1/functions functionId=on_request_example
+[debug] [2024-01-09T01:12:47.950Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/reviewfinder-ff9d9/locations/us-central1/functions {"name":"projects/reviewfinder-ff9d9/locations/us-central1/functions/on_request_example","buildConfig":{"runtime":"python311","entryPoint":"on_request_example","source":{"storageSource":{"bucket":"gcf-v2-uploads-1087603431090-us-central1","object":"556489ff-c8e5-4448-8404-81e5f6dedc94.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"reviewfinder-ff9d9\",\"storageBucket\":\"reviewfinder-ff9d9.appspot.com\"}","GCLOUD_PROJECT":"reviewfinder-ff9d9","EVENTARC_CLOUD_EVENT_SOURCE":"projects/reviewfinder-ff9d9/locations/us-central1/services/on_request_example","FUNCTION_TARGET":"on_request_example"},"secretEnvironmentVariables":[],"ingressSettings":null,"timeoutSeconds":null,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"c790eebab443a3a8039f42614a8a5f4c475fae2a"}}
+[debug] [2024-01-09T01:12:49.744Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/reviewfinder-ff9d9/locations/us-central1/functions 200
+[debug] [2024-01-09T01:12:49.745Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/reviewfinder-ff9d9/locations/us-central1/functions {"name":"projects/reviewfinder-ff9d9/locations/us-central1/operations/operation-1704762767571-60e79032ff932-30966821-efe96e40","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-01-09T01:12:49.019011752Z","target":"projects/reviewfinder-ff9d9/locations/us-central1/functions/on_request_example","verb":"create","cancelRequested":false,"apiVersion":"v2"},"done":false}
+[debug] [2024-01-09T01:12:49.745Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/reviewfinder-ff9d9/locations/us-central1/operations/operation-1704762767571-60e79032ff932-30966821-efe96e40 [none]
+[debug] [2024-01-09T01:12:50.138Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/reviewfinder-ff9d9/locations/us-central1/operations/operation-1704762767571-60e79032ff932-30966821-efe96e40 200
+[debug] [2024-01-09T01:12:50.139Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/reviewfinder-ff9d9/locations/us-central1/operations/operation-1704762767571-60e79032ff932-30966821-efe96e40 {"name":"projects/reviewfinder-ff9d9/locations/us-central1/operations/operation-1704762767571-60e79032ff932-30966821-efe96e40","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-01-09T01:12:49.019011752Z","target":"projects/reviewfinder-ff9d9/locations/us-central1/functions/on_request_example","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/reviewfinder-ff9d9/locations/us-central1/functions/on_request_example","buildConfig":{"runtime":"python311","entryPoint":"on_request_example","source":{"storageSource":{"bucket":"gcf-v2-sources-1087603431090-us-central1","object":"on_request_example/function-source.zip","generation":"1704762768532402"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"service":"projects/reviewfinder-ff9d9/locations/us-central1/services/on-request-example","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"reviewfinder-ff9d9\",\"storageBucket\":\"reviewfinder-ff9d9.appspot.com\"}","GCLOUD_PROJECT":"reviewfinder-ff9d9","EVENTARC_CLOUD_EVENT_SOURCE":"projects/reviewfinder-ff9d9/locations/us-central1/services/on_request_example","FUNCTION_TARGET":"on_request_example"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"1087603431090-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"c790eebab443a3a8039f42614a8a5f4c475fae2a"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION"},"done":false}
+[debug] [2024-01-09T01:12:50.653Z] [create-default-us-central1-on_request_example] Retrying task index 0
+[debug] [2024-01-09T01:12:50.653Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/reviewfinder-ff9d9/locations/us-central1/operations/operation-1704762767571-60e79032ff932-30966821-efe96e40 [none]
+[debug] [2024-01-09T01:12:50.968Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/reviewfinder-ff9d9/locations/us-central1/operations/operation-1704762767571-60e79032ff932-30966821-efe96e40 200
+[debug] [2024-01-09T01:12:50.969Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/reviewfinder-ff9d9/locations/us-central1/operations/operation-1704762767571-60e79032ff932-30966821-efe96e40 {"name":"projects/reviewfinder-ff9d9/locations/us-central1/operations/operation-1704762767571-60e79032ff932-30966821-efe96e40","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-01-09T01:12:49.019011752Z","target":"projects/reviewfinder-ff9d9/locations/us-central1/functions/on_request_example","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/reviewfinder-ff9d9/locations/us-central1/functions/on_request_example","buildConfig":{"runtime":"python311","entryPoint":"on_request_example","source":{"storageSource":{"bucket":"gcf-v2-sources-1087603431090-us-central1","object":"on_request_example/function-source.zip","generation":"1704762768532402"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"service":"projects/reviewfinder-ff9d9/locations/us-central1/services/on-request-example","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"reviewfinder-ff9d9\",\"storageBucket\":\"reviewfinder-ff9d9.appspot.com\"}","GCLOUD_PROJECT":"reviewfinder-ff9d9","EVENTARC_CLOUD_EVENT_SOURCE":"projects/reviewfinder-ff9d9/locations/us-central1/services/on_request_example","FUNCTION_TARGET":"on_request_example"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"1087603431090-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"c790eebab443a3a8039f42614a8a5f4c475fae2a"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION"},"done":false}
+[debug] [2024-01-09T01:12:51.974Z] [create-default-us-central1-on_request_example] Retrying task index 0
+[debug] [2024-01-09T01:12:51.975Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/reviewfinder-ff9d9/locations/us-central1/operations/operation-1704762767571-60e79032ff932-30966821-efe96e40 [none]
+[debug] [2024-01-09T01:12:52.311Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/reviewfinder-ff9d9/locations/us-central1/operations/operation-1704762767571-60e79032ff932-30966821-efe96e40 200
+[debug] [2024-01-09T01:12:52.311Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/reviewfinder-ff9d9/locations/us-central1/operations/operation-1704762767571-60e79032ff932-30966821-efe96e40 {"name":"projects/reviewfinder-ff9d9/locations/us-central1/operations/operation-1704762767571-60e79032ff932-30966821-efe96e40","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-01-09T01:12:49.019011752Z","endTime":"2024-01-09T01:12:51.036592592Z","target":"projects/reviewfinder-ff9d9/locations/us-central1/functions/on_request_example","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/reviewfinder-ff9d9/locations/us-central1/functions/on_request_example","buildConfig":{"runtime":"python311","entryPoint":"on_request_example","source":{"storageSource":{"bucket":"gcf-v2-sources-1087603431090-us-central1","object":"on_request_example/function-source.zip","generation":"1704762768532402"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"service":"projects/reviewfinder-ff9d9/locations/us-central1/services/on-request-example","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"reviewfinder-ff9d9\",\"storageBucket\":\"reviewfinder-ff9d9.appspot.com\"}","GCLOUD_PROJECT":"reviewfinder-ff9d9","EVENTARC_CLOUD_EVENT_SOURCE":"projects/reviewfinder-ff9d9/locations/us-central1/services/on_request_example","FUNCTION_TARGET":"on_request_example"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"1087603431090-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"c790eebab443a3a8039f42614a8a5f4c475fae2a"},"environment":"GEN_2"},"stages":[{"name":"ARTIFACT_REGISTRY","state":"NOT_STARTED"},{"name":"SERVICE","message":"Deleting Cloud Run service","state":"COMPLETE","resource":"projects/reviewfinder-ff9d9/locations/us-central1/services/on-request-example"}],"operationType":"CREATE_FUNCTION"},"done":true,"error":{"code":7,"message":"Unable to retrieve the repository metadata for projects/reviewfinder-ff9d9/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.","details":[{"@type":"type.googleapis.com/google.rpc.Status","code":7,"message":"Unable to cleanup package projects/reviewfinder-ff9d9/locations/us-central1/repositories/gcf-artifacts/packages/on__request__example. Ensure that the Cloud Functions service account has 'artifactregistry.packages.delete' permission. You can add the permission by granting the role 'roles/artifactregistry.repoAdmin'."}]}}
+[debug] [2024-01-09T01:12:52.311Z] Got source token undefined for region us-central1
+[error] Unable to retrieve the repository metadata for projects/reviewfinder-ff9d9/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.
+[debug] [2024-01-09T01:12:52.313Z] Total Function Deployment time: 4367
+[debug] [2024-01-09T01:12:52.313Z] 1 Functions Deployed
+[debug] [2024-01-09T01:12:52.313Z] 1 Functions Errored
+[debug] [2024-01-09T01:12:52.313Z] 0 Function Deployments Aborted
+[debug] [2024-01-09T01:12:52.313Z] Average Function Deployment time: 4365
+[info] 
+[info] Functions deploy had errors with the following functions:
+	on_request_example(us-central1)
+[debug] [2024-01-09T01:12:52.314Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2024-01-09T01:12:52.316Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/reviewfinder-ff9d9/locations/us-central1/repositories/gcf-artifacts/packages/on__request__example [none]
+[debug] [2024-01-09T01:12:52.317Z] >>> [apiv2][query] GET https://us.gcr.io/v2/reviewfinder-ff9d9/gcf/us-central1/tags/list [none]
+[debug] [2024-01-09T01:12:52.647Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/reviewfinder-ff9d9/locations/us-central1/repositories/gcf-artifacts/packages/on__request__example 404
+[debug] [2024-01-09T01:12:52.648Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/reviewfinder-ff9d9/locations/us-central1/repositories/gcf-artifacts/packages/on__request__example {"error":{"code":404,"message":"Package \"projects/reviewfinder-ff9d9/locations/us-central1/repositories/gcf-artifacts/packages/on__request__example\" was not found.","status":"NOT_FOUND"}}
+[debug] [2024-01-09T01:12:53.402Z] <<< [apiv2][status] GET https://us.gcr.io/v2/reviewfinder-ff9d9/gcf/us-central1/tags/list 200
+[debug] [2024-01-09T01:12:53.403Z] <<< [apiv2][body] GET https://us.gcr.io/v2/reviewfinder-ff9d9/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"reviewfinder-ff9d9/gcf/us-central1","tags":[]}
+[debug] [2024-01-09T01:12:53.403Z] Could not find image for function projects/reviewfinder-ff9d9/locations/us-central1/functions/on_request_example
+[debug] [2024-01-09T01:12:53.403Z] Functions deploy failed.
+[debug] [2024-01-09T01:12:53.403Z] {
+  "endpoint": {
+    "id": "on_request_example",
+    "project": "reviewfinder-ff9d9",
+    "region": "us-central1",
+    "entryPoint": "on_request_example",
+    "platform": "gcfv2",
+    "runtime": "python311",
+    "httpsTrigger": {},
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    },
+    "secretEnvironmentVariables": [],
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "serviceAccount": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "concurrency": 80,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"reviewfinder-ff9d9\",\"storageBucket\":\"reviewfinder-ff9d9.appspot.com\"}",
+      "GCLOUD_PROJECT": "reviewfinder-ff9d9",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/reviewfinder-ff9d9/locations/us-central1/services/on_request_example"
+    },
+    "codebase": "default",
+    "cpu": 1,
+    "targetedByOnly": false,
+    "hash": "c790eebab443a3a8039f42614a8a5f4c475fae2a"
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "exit": 1,
+    "message": "Unable to retrieve the repository metadata for projects/reviewfinder-ff9d9/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.",
+    "status": 7,
+    "code": 7
+  }
+}
+[debug] [2024-01-09T01:12:53.406Z] Error: Failed to create function on_request_example in region us-central1
+    at C:\Users\dxinh\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:291:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Fabricator.createV2Function (C:\Users\dxinh\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:277:30)
+    at async Fabricator.createEndpoint (C:\Users\dxinh\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:136:13)
+    at async handle (C:\Users\dxinh\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:88:17)
+[error] 
+[error] Error: There was an error deploying functions
